@@ -13,3 +13,5 @@ RUN apt-get update
 RUN apt-get install trivy -y
 
 RUN trivy
+
+CMD ["localhost"]
