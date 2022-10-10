@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+RUN sudo apt-get update
+
 RUN apt-get install wget apt-transport-https gnupg lsb-release -y
 
 RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
