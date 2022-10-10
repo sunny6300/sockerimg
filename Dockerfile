@@ -14,4 +14,4 @@ RUN apt-get install trivy -y
 
 RUN trivy
 
-CMD ["localhost"]
+ENTRYPOINT ["/bin/bash"]
