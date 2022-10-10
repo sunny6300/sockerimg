@@ -1,13 +1,11 @@
-FROM node:latest
+FROM ubuntu:latest
 
 WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN npm install
+RUN apt-get update
 
-COPY . .
+RUN apt-get install trivy
 
-EXPOSE 8000
-
-CMD ["npm", "run", "dev"]
+RUN trivy
