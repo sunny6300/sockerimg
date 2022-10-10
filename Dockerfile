@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-RUN sudo apt-get update
+RUN apt-get update
 
 RUN apt-get install wget apt-transport-https gnupg lsb-release -y
 
