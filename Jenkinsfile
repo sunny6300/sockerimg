@@ -8,6 +8,8 @@ pipeline {
         }
         stage('Test') {
             steps {
+                sh 'pwd'
+                sh 'ls'
                 sh './test.sh'
             }
         }
