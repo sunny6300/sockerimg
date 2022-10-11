@@ -9,3 +9,5 @@ echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.
 apt-get update -y;
 
 apt-get install trivy -y
+
+python3 -m pip install semgrep
