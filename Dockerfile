@@ -1,16 +1,12 @@
 FROM ubuntu:latest
 
-RUN apt-get update
+WORKDIR /app
 
-RUN apt-get install wget apt-transport-https gnupg lsb-release -y
+ADD test.sh /app
 
-RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | tee /usr/share/keyrings/trivy.gpg > /dev/null
+RUN chmod +x /app/test.sh
 
-RUN echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main" | tee -a /etc/apt/sources.list.d/trivy.list
-
-RUN apt-get update
-
-RUN apt-get install trivy -y
+RUN /app/test.sh
 
 RUN trivy
 
