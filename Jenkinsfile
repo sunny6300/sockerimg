@@ -8,8 +8,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'chmod +x setup.sh'
-                sh './setup.sh'
+                sh 'sudo docker build -t rajezvlb/sockerimg:1.0.0 .'
             }
         }
         stage('Push') {

@@ -2,11 +2,11 @@ FROM ubuntu:latest
 
 WORKDIR /app
 
-ADD test.sh /app
+ADD setup.sh /app
 
-RUN chmod +x /app/test.sh
+RUN chmod +x /app/setup.sh
 
-RUN /app/test.sh
+RUN /app/setup.sh
 
 RUN trivy
 
