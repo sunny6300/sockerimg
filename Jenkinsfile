@@ -6,17 +6,10 @@ pipeline {
                 git 'https://github.com/rajeshasdeveloper/sockerimg.git'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'pwd'
-                sh 'ls'
-                sh 'chmod +x test.sh'
-                sh './test.sh'
-            }
-        }
         stage('Build') {
             steps {
-                sh 'sudo docker build -t rajezvlb/sockerimg:1.0.0 .'
+                sh 'chmod +x setup.sh'
+                sh './setup.sh'
             }
         }
         stage('Push') {
