@@ -10,6 +10,7 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh 'ls'
+                sh 'chmod +x test.sh'
                 sh './test.sh'
             }
         }
